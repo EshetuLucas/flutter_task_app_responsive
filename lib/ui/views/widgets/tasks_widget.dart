@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import 'package:tasks_app/ui/common/app_colors.dart';
 import 'package:tasks_app/ui/common/app_text_styles.dart';
 import 'package:tasks_app/ui/common/ui_helpers.dart';
@@ -9,6 +8,7 @@ import 'package:tasks_app/ui/views/widgets/description_widget.dart';
 import 'package:tasks_app/ui/views/widgets/title_widget.dart';
 import 'package:tasks_app/utils/menu_items_helper.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class TaskWidget extends StatelessWidget {
   const TaskWidget({
@@ -72,7 +72,7 @@ class TaskWidget extends StatelessWidget {
                                     ),
                             ),
                             trailing: Text(
-                              task.dateTime.toString(),
+                              DateFormat.yMMMMd().format(task.dateTime),
                               style: isSelectedTask
                                   ? ktsWhiteSmallTextStyle
                                   : ktsSmallDarkTextStyle,
