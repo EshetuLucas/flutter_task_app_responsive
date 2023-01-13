@@ -13,42 +13,42 @@ class NetworkService {
         Task(
           id: '2',
           title: 'Check latest news on Flutter',
-          dateTime: now,
+          dateTime: now.add(const Duration(days: 1)),
           description:
               'Loam soils contain sand, silt and clay in such proportions that stickyness and non-adhesiveness are in balance - so the soils are mouldable but not sticky. Loams are the "friendliest" soils to cultivate. Clays can absorb and hold onto large amounts of water because of their sheet structure and large surface area.',
         ),
         Task(
           id: '3',
           title: 'Have a call with Flutter team',
-          dateTime: now,
+          dateTime: now.add(const Duration(days: 2)),
           description:
               'Loam soils contain sand, silt and clay in such proportions that stickyness and non-adhesiveness are in balance - so the soils are mouldable but not sticky. Loams are the "friendliest" soils to cultivate. Clays can absorb and hold onto large amounts of water because of their sheet structure and large surface area.',
         ),
         Task(
           id: '4',
           title: 'Work on application performance',
-          dateTime: now,
+          dateTime: now.add(const Duration(days: 6)),
           description:
               'Loam soils contain sand, silt and clay in such proportions that stickyness and non-adhesiveness are in balance - so the soils are mouldable but not sticky. Loams are the "friendliest" soils to cultivate. Clays can absorb and hold onto large amounts of water because of their sheet structure and large surface area.',
         ),
         Task(
           id: '5',
           title: 'Plan work for next week',
-          dateTime: now,
+          dateTime: now.add(const Duration(days: 8)),
           description:
               'Loam soils contain sand, silt and clay in such proportions that stickyness and non-adhesiveness are in balance - so the soils are mouldable but not sticky. Loams are the "friendliest" soils to cultivate. Clays can absorb and hold onto large amounts of water because of their sheet structure and large surface area.',
         ),
         Task(
           id: '6',
           title: 'Order lunch',
-          dateTime: now,
+          dateTime: now.add(const Duration(days: 12)),
           description:
               'Loam soils contain sand, silt and clay in such proportions that stickyness and non-adhesiveness are in balance - so the soils are mouldable but not sticky. Loams are the "friendliest" soils to cultivate. Clays can absorb and hold onto large amounts of water because of their sheet structure and large surface area.',
         ),
         Task(
           id: '7',
           title: 'Create an invoice for last month',
-          dateTime: now,
+          dateTime: now.add(const Duration(days: 14)),
           description:
               'Loam soils contain sand, silt and clay in such proportions that stickyness and non-adhesiveness are in balance - so the soils are mouldable but not sticky. Loams are the "friendliest" soils to cultivate. Clays can absorb and hold onto large amounts of water because of their sheet structure and large surface area.',
         ),
