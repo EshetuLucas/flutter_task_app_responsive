@@ -1,6 +1,7 @@
 # stacked_app
 
 A new Flutter project.
+Watch a demo here: https://www.loom.com/share/5df50c05d1af4b25868a166d73346a3f
 
 ## Getting Started
 
