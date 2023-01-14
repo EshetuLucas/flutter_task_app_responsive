@@ -75,7 +75,7 @@ class CustomDropDown extends StatelessWidget {
         },
         itemPadding: const EdgeInsets.only(left: 16, right: 16),
         dropdownWidth: dropdownWidth,
-        dropdownPadding: const EdgeInsets.symmetric(vertical: 20),
+        dropdownPadding: const EdgeInsets.symmetric(vertical: 30),
         dropdownDecoration: BoxDecoration(
           borderRadius: borderRadius ??
               const BorderRadius.only(

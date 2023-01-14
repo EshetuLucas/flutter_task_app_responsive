@@ -18,8 +18,28 @@ class HomeView extends ConsumerWidget {
 
   final _beamerKey = GlobalKey<BeamerState>();
 
+  List<Widget> getLanguageWidget(bool isArabic) {
+    final widgets = [
+      verticalSpaceSmall,
+      const SizedBox(width: 5),
+      const Icon(
+        Icons.language,
+        color: kcLightGrey,
+        size: 30,
+      ),
+      horizontalSpaceMedium,
+      Text(
+        'language'.tr,
+        style: ktsSmallWhiteTextStyle.copyWith(fontSize: 16),
+      ),
+    ];
+
+    return isArabic ? widgets.reversed.toList() : widgets;
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final viewModel = ref.read(homeViewProvider.notifier);
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -43,8 +63,7 @@ class HomeView extends ConsumerWidget {
                               children: [
                                 CustomDropDown(
                                     items: TaskAppsMenuItem.menuItems,
-                                    onChanged: (menuItem) => ref
-                                        .read(homeViewProvider.notifier)
+                                    onChanged: (menuItem) => viewModel
                                         .onMenuItemTap(menuItem!, _beamerKey)),
                                 horizontalSpaceSmall,
                                 LanguageOpitionWidget(
@@ -88,7 +107,7 @@ class HomeView extends ConsumerWidget {
                                   iconData: Icons.task,
                                 ),
                               ),
-                              const SizedBox(height: 16.0),
+                              verticalSpaceMedium,
                               MenuView(
                                 beamer: _beamerKey,
                                 menuItem: TaskAppsMenuItem(
@@ -97,7 +116,7 @@ class HomeView extends ConsumerWidget {
                                   iconData: Icons.fact_check_outlined,
                                 ),
                               ),
-                              const SizedBox(height: 16.0),
+                              verticalSpaceMedium,
                               MenuView(
                                 beamer: _beamerKey,
                                 menuItem: TaskAppsMenuItem(
@@ -106,24 +125,16 @@ class HomeView extends ConsumerWidget {
                                   iconData: Icons.groups_rounded,
                                 ),
                               ),
-                              verticalSpaceSmall,
-                              Padding(
-                                padding: const EdgeInsets.only(left: 5),
-                                child: LanguageOpitionWidget(
-                                    backgroundColor: kcWhite.withOpacity(0.2),
-                                    ref: ref,
-                                    hint: ListTile(
-                                      leading: const Icon(
-                                        Icons.language,
-                                        color: kcLightGrey,
-                                        size: 30,
-                                      ),
-                                      title: Text(
-                                        'language'.tr,
-                                        style: ktsSmallWhiteTextStyle.copyWith(
-                                            fontSize: 16),
-                                      ),
-                                    )),
+                              verticalSpaceMedium,
+                              LanguageOpitionWidget(
+                                backgroundColor: kcWhite.withOpacity(0.2),
+                                ref: ref,
+                                hint: Row(
+                                    mainAxisAlignment: viewModel.isArabic
+                                        ? ArabicUIHelpers.mainAxisAlignment
+                                        : EnglishUIHelpers.mainAxisAlignment,
+                                    children:
+                                        getLanguageWidget(viewModel.isArabic)),
                               )
                             ],
                           ),

@@ -1,4 +1,5 @@
 import 'package:stacked/stacked_annotations.dart';
+import 'package:tasks_app/service/language_service.dart';
 import 'package:tasks_app/service/network_service.dart';
 import 'package:tasks_app/ui/views/tasks/tasks_viewmodel.dart';
 // @stacked-import
@@ -9,5 +10,6 @@ import 'package:tasks_app/ui/views/tasks/tasks_viewmodel.dart';
   LazySingleton(classType: TasksViewModel),
   // core-service
   LazySingleton(classType: NetworkService),
+  LazySingleton(classType: LanguageService),
 ])
 class App {}

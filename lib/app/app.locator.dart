@@ -8,6 +8,7 @@
 
 import 'package:stacked_core/stacked_core.dart';
 
+import '../service/language_service.dart';
 import '../service/network_service.dart';
 import '../ui/views/tasks/tasks_viewmodel.dart';
 
@@ -22,4 +23,5 @@ Future<void> setupLocator(
 // Register dependencies
   locator.registerLazySingleton(() => TasksViewModel());
   locator.registerLazySingleton(() => NetworkService());
+  locator.registerLazySingleton(() => LanguageService());
 }

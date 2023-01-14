@@ -77,3 +77,11 @@ double getResponsiveFontSize(BuildContext context,
 
   return responsiveSize < minFont ? minFont : responsiveSize;
 }
+
+class ArabicUIHelpers {
+  static MainAxisAlignment mainAxisAlignment = MainAxisAlignment.end;
+}
+
+class EnglishUIHelpers {
+  static MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start;
+}
